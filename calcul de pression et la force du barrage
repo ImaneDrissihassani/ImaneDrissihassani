@@ -1,0 +1,17 @@
+H=input("entrer la valeur de la hauteur")
+mv=input("entrer la valeur de la masse volumique")
+g=input("entrer la valeur de la gravité")
+L=input("entrer la valeur de la largeur")
+try:
+    H=float(H)
+    mv=float(mv)
+    g=float(g)
+    L = float(L)
+    P=mv*g*H
+    S=L*H
+    F=P*S
+    print("la pression est:",P,"Pa")
+    print("la  est:", F, "N")
+    print("la surface est :",S,"m**2")
+except:
+    print("la valeur de hauteur ou largeur  est:")

@@ -1,0 +1,33 @@
+import math
+def my_hydrodynamique():
+    input("pour calculer la longeur L appuuez sur entrer")
+    d1=input("entrez la valeur de diamétre D1 de section large en m :")
+    v1=input("entrez la valeur de vitesse V1 de section large en m/s:")
+    o=input("entrez d'angle en deg:")
+    k=input("entrer le coeffecient:")
+    try:
+        d1=float(d1)
+        v1=float(v1)
+        o=float(o)
+        k=float(k)
+        v2=v1*k
+        print("vitesse de la section réduite",v2,"m/s")
+        d2=d1*math.sqrt(v1/v2)
+        print("diametre de la section réduite est :",d2,"m")
+        u=math.tan(math.radians(o))
+        a=d2/(2*u)
+        print("a=",a,"m")
+        L=(d1/(2*u))-a
+        print("la valeur de longeur L est:",L,"m")
+    except:
+        print("les valeurs saisies sont  incorrectes ")
+        my_hydrodynamique()
+    input("pour calculer la valeur de variation de pression appuyez sur entrer")
+    gho=float(input("donnez la valeur de masse volumique en m3/s:"))
+    try:
+      w=(v1**2-v2**2)*(gho/2)
+      print("la variation de pression est:",w,"Pa")
+    except:
+        print("les valeurs introduites sont incorrectes")
+        my_hydrodynamique()
+my_hydrodynamique()
